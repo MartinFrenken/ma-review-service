@@ -15,11 +15,12 @@ spec:
         app: cloud-run-github-actions
     spec:
       containers:
+
+      - name: cloud-run-github-actions
+        image: eu.gcr.io/sixth-spot-273818/IMAGE:TAG
       - env:
         - name: BT_SERVER
           value: kafka:9093
-      - name: cloud-run-github-actions
-        image: eu.gcr.io/sixth-spot-273818/IMAGE:TAG
         ports:
         - containerPort: 9000
         resources:
