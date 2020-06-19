@@ -1,0 +1,26 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: cloud-run-github-actions
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        app: cloud-run-github-actions
+    spec:
+      containers:
+      - name: cloud-run-github-actions
+        image: eu.gcr.io/sixth-spot-273818/IMAGE:TAG
+        ports:
+        - containerPort: 4000
+        resources:
+          requests:
+            cpu: 100m
+          limits:
+            cpu: 100m              
