@@ -1,7 +1,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: cloud-run-github-actions
+  name: review-service
 spec:
   replicas: 1
   strategy:
@@ -12,11 +12,11 @@ spec:
   template:
     metadata:
       labels:
-        app: cloud-run-github-actions
+        app: review-service
     spec:
       containers:
 
-      - name: cloud-run-github-actions
+      - name: review-service
         image: eu.gcr.io/sixth-spot-273818/IMAGE:TAG
         env:
           - name: BT_SERVER
