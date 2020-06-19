@@ -21,4 +21,4 @@ spec:
     - port: 4000
       targetPort: 4000
   selector:
-    app: review-service
+    app: hello-world
