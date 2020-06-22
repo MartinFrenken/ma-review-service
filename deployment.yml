@@ -20,7 +20,7 @@ spec:
         image: eu.gcr.io/sixth-spot-273818/IMAGE:TAG
         env:
           - name: BT_SERVER
-            value: kafka-broker:9093
+            value: kafka-broker:9092
         ports:
         - containerPort: 9000
         resources:
